@@ -1,0 +1,24 @@
+{
+  "name": "networkdatalabs",
+  "version": "0.1.0",
+  "description": "Official client for the Network Data Labs IP geolocation API: country, city, ASN and risk flags for any IP.",
+  "keywords": ["ip", "geolocation", "ip-geolocation", "geoip", "asn", "ip-lookup", "vpn-detection", "ip-to-country"],
+  "homepage": "https://www.networkdatalabs.com",
+  "repository": { "type": "git", "url": "git+https://github.com/networkdatalabs/networkdatalabs-node.git" },
+  "bugs": { "url": "https://github.com/networkdatalabs/networkdatalabs-node/issues" },
+  "license": "MIT",
+  "author": "Network Data Labs <hello@networkdatalabs.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": { "typescript": "^5.6.0" }
+}
